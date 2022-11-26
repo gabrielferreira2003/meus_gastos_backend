@@ -39,7 +39,6 @@ namespace Application.Gains.Command.AddGains
                 {
                     Id = request.FinancasId,
                     Ganhos = request.Valor,
-                    Patrimonio = request.Patrimonio,
                     UsuarioId = request.UsuarioId,
                 };
 

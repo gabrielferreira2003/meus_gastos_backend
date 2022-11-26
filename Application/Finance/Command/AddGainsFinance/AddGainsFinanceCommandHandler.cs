@@ -23,17 +23,12 @@ namespace Application.Finance.Command.AddGainsFinance
         {
             try
             {
-                var financaSelecionada = await _contexto.Financas.AsNoTracking().FirstOrDefaultAsync(x => x.Id == request.Id);
+                var financaSelecionada = await _contexto.Financas.FirstOrDefaultAsync(x => x.Id == request.Id);
 
-                var financaAtualizada = new Financas()
-                {
-                    Id = request.Id,
-                    Patrimonio = financaSelecionada.Patrimonio + request.Ganhos,
-                    UsuarioId = request.UsuarioId,
-                };
+                financaSelecionada!.Patrimonio = financaSelecionada.Patrimonio + request.Ganhos;
 
-                _contexto.Financas.Update(financaAtualizada);
-                await _contexto.SaveChangesAsync();
+                _contexto.Financas.Update(financaSelecionada);
+                await _contexto.SaveChangesAsync(cancellationToken);
 
                 return new AddGainsFinanceCommandResponse() { Sucesso = true };
             }

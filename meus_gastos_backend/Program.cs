@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -102,6 +103,8 @@ builder.Services.AddAuthentication(x =>
         ValidIssuer = appSettings.Emissor
     };
 });
+
+builder.Services.AddHttpContextAccessor().TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
 

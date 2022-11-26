@@ -10,5 +10,6 @@ namespace Application.Gains.Command.ExcludeGains
     public class ExcludeGainsCommand : IRequest<ExcludeGainsCommandResponse>
     {
         public int Id { get; set; }
+        public int FinancaId { get; set; }
     }
 }

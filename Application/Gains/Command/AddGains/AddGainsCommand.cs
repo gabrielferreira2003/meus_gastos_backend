@@ -13,6 +13,5 @@ namespace Application.Gains.Command.AddGains
         public string Descricao { get; set; }
         public int FinancasId { get; set; }
         public Guid UsuarioId { get; set; }
-        public double Patrimonio { get; set; }
     }
 }
