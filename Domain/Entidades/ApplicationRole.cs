@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entidades
+namespace MeusGastos.Domain.Entidades
 {
     public class ApplicationRole : IdentityRole<Guid>
     {

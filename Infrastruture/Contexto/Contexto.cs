@@ -1,4 +1,4 @@
-﻿using Domain.Entidades;
+﻿using MeusGastos.Domain.Entidades;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastruture.Contexto
+namespace MeusGastos.Infrastructure.Contexto
 {
     public class Contexto : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {

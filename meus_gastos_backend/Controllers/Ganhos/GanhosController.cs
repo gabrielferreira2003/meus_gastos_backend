@@ -1,13 +1,16 @@
-﻿using Application.Gains.Command.AddGains;
-using Application.Gains.Command.EditGains;
-using Application.Gains.Command.ExcludeGains;
-using Application.Gains.Query.GetGains;
+﻿using MeusGastos.Application.Features.Gains.Command.AddGains;
+using MeusGastos.Application.Features.Gains.Command.EditGains;
+using MeusGastos.Application.Features.Gains.Command.ExcludeGains;
+using MeusGastos.Application.Features.Gains.Query.GetGains;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace meus_gastos_backend.Controllers.Ganhos
+namespace MeusGastos.Controllers.Ganhos
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
     public class GanhosController : ControllerBase
@@ -41,7 +44,7 @@ namespace meus_gastos_backend.Controllers.Ganhos
 
         [HttpPut]
         [Route("[action]")]
-        public async Task<EditGainsCommandResponse> EditarGanhos([FromQuery] EditGainsCommand request)
+        public async Task<EditGainsCommandResponse> EditarGanhos([FromBody] EditGainsCommand request)
         {
             return await _mediator.Send(request);
         }

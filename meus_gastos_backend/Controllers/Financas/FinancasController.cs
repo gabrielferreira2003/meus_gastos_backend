@@ -1,12 +1,12 @@
-﻿using Application.Finance.Command.AddFinance;
-using Application.Finance.Query.SearchFinance;
+﻿using MeusGastos.Application.Features.Finance.Command.AddFinance;
+using MeusGastos.Application.Features.Finance.Query.SearchFinance;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace meus_gastos_backend.Controllers.Financas
+namespace MeusGastos.Controllers.Financas
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]

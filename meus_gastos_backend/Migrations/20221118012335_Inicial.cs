@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace meus_gastos_backend.Migrations
+namespace MeusGastos.Migrations
 {
     public partial class Inicial : Migration
     {

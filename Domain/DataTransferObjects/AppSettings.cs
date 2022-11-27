@@ -1,4 +1,4 @@
-﻿namespace meus_gastos_backend
+﻿namespace MeusGastos
 {
     public class AppSettings
     {

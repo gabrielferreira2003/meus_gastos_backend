@@ -1,8 +1,9 @@
-using Application.Gains.Command.AddGains;
-using Domain.Entidades;
-using Infrastruture.Contexto;
+using MeusGastos.Application.Features.Gains.Command.AddGains;
+using MeusGastos.Application.Services.UserService;
+using MeusGastos.Domain.Entidades;
+using MeusGastos.Infrastructure.Contexto;
 using MediatR;
-using meus_gastos_backend;
+using MeusGastos;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
@@ -22,6 +23,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddScoped<Contexto>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddSwaggerGen(options =>
 {

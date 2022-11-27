@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Domain.Entidades
+namespace MeusGastos.Domain.Entidades
 {
     [Table("Gastos")]
     public class Gastos

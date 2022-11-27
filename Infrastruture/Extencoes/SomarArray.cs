@@ -1,11 +1,11 @@
-﻿using Domain.Entidades;
+﻿using MeusGastos.Domain.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastruture.Extencoes
+namespace MeusGastos.Infrastructure.Extencoes
 {
     public static class SomarArray
     {

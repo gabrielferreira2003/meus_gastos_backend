@@ -1,10 +1,9 @@
-﻿using Application.User.Command.RegisterUser;
-using Application.User.Command.UserLogin;
+﻿using MeusGastos.Application.Features.User.Command.RegisterUser;
+using MeusGastos.Application.Features.User.Command.UserLogin;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace meus_gastos_backend.Controllers.Usuario
+namespace MeusGastos.Controllers.Usuario
 {
     [Route("api/[controller]")]
     [ApiController]
