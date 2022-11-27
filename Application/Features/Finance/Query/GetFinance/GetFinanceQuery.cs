@@ -9,6 +9,5 @@ namespace MeusGastos.Application.Features.Finance.Query.SearchFinance
 {
     public class GetFinanceQuery : IRequest<GetFinanceQueryResponse>
     {
-        public Guid UsuarioId { get; set; }
     }
 }

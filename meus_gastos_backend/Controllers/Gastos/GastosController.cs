@@ -3,10 +3,10 @@ using MeusGastos.Application.Features.Expenses.Command.DeleteExpenses;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MeusGastos.Application.Features.Expenses.Query.GetExpenses;
 using MeusGastos.Application.Features.Expenses.Command.EditExpenses;
+using MeusGastos.Application.Features.Expenses.Query.GetExpense;
 
 namespace MeusGastos.Controllers.Gastos
 {
@@ -23,7 +23,7 @@ namespace MeusGastos.Controllers.Gastos
 
         [HttpPost]
         [Route("[action]")]
-        public async Task<AddExpensesCommandResponse> AdiconarGastos([FromBody] AddExpensesCommand request)
+        public async Task<AddExpensesCommandResponse> AdicionarGastos([FromBody] AddExpensesCommand request)
         {
             return await _mediator.Send(request);
         }
@@ -38,6 +38,13 @@ namespace MeusGastos.Controllers.Gastos
         [HttpGet]
         [Route("[action]")]
         public async Task<IEnumerable<GetExpensesQueryResponse>> PegarGastos([FromQuery] GetExpensesQuery request)
+        {
+            return await _mediator.Send(request);
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<GetExpenseQueryResponse> PegarGasto([FromQuery] GetExpenseQuery request)
         {
             return await _mediator.Send(request);
         }

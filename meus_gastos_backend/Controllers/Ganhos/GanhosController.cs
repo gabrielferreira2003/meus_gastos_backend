@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MeusGastos.Application.Features.Gains.Query.GetGain;
 
 namespace MeusGastos.Controllers.Ganhos
 {
@@ -38,6 +39,13 @@ namespace MeusGastos.Controllers.Ganhos
         [HttpGet]
         [Route("[action]")]
         public async Task<IEnumerable<GetGainsQueryResponse>> PegarGanhos([FromQuery] GetGainsQuery request)
+        {
+            return await _mediator.Send(request);
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<GetGainQueryResponse> PegarGanho([FromQuery] GetGainQuery request)
         {
             return await _mediator.Send(request);
         }
